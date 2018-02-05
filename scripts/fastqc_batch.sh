@@ -23,8 +23,8 @@ ln -s ${fileDir}/GSF1659-EC-7_S17_R1_001.fastq.gz EC-7_S17_R1.fastq.gz
 ln -s ${fileDir}/GSF1659-EC-7_S17_R2_001.fastq.gz  EC-7_S17_R2.fastq.gz 
 ln -s ${fileDir}/GSF1659-ECL-1_S15_R1_001.fastq.gz ECL-1_S15_R1.fastq.gz
 ln -s ${fileDir}/GSF1659-ECL-1_S15_R2_001.fastq.gz ECL-1_S15_R2.fastq.gz
-ln -s ${fileDir}/SF1659-ECL-4_S16_R1_001.fastq.gz ECL-4_S16_R1.fastq.gz
-ln -s ${fileDir}/SF1659-ECL-4_S16_R2_001.fastq.gz ECL-4_S16_R2.fastq.gz
+ln -s ${fileDir}/GSF1659-ECL-4_S16_R1_001.fastq.gz ECL-4_S16_R1.fastq.gz
+ln -s ${fileDir}/GSF1659-ECL-4_S16_R2_001.fastq.gz ECL-4_S16_R2.fastq.gz
 ln -s ${fileDir}/GSF1659-KP-177_S18_R1_001.fastq.gz KP-177_S18_R1.fastq.gz
 ln -s ${fileDir}/GSF1659-KP-177_S18_R2_001.fastq.gz KP-177_S18_R2.fastq.gz
 ln -s ${fileDir}/GSF1659-KP-49_S9_R1_001.fastq.gz KP-49_S9_R1.fastq.gz
