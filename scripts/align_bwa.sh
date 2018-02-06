@@ -34,7 +34,7 @@ if [ ! -d "$fqDir" ] ; then
 cd $fqDir
 
 ln -s ${fileDir}/GSF1659-EC-7_S17_R1_001.fastq EC-7_S17_R1.fastq
-ln -s ${fileDir}/GSF1659-EC-7_S17_R2_001.fastq  EC-7_S17_R2.fastq
+ln -s ${fileDir}/GSF1659-EC-7_S17_R2_001.fastq EC-7_S17_R2.fastq
 ln -s ${fileDir}/GSF1659-ECL-1_S15_R1_001.fastq ECL-1_S15_R1.fastq
 ln -s ${fileDir}/GSF1659-ECL-1_S15_R2_001.fastq ECL-1_S15_R2.fastq
 ln -s ${fileDir}/GSF1659-ECL-4_S16_R1_001.fastq ECL-4_S16_R1.fastq
@@ -58,7 +58,7 @@ cd $WD
 
 echo "Retrieving the appropriate assembly files"
 
-#source 0README
+source 0README
 
 echo "Performing alignment on the bacterial files"
 
@@ -69,8 +69,8 @@ cd ${WD}/${fqDir}
   for file1 in `ls KP-*_R1.fastq`; do
     echo $file1
     file2=$(basename $file1 _R1.fastq)_R2.fastq
-    echo "bwa mem $KPgenome $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam"
-    bwa mem -t $nThreads $KPgenome $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam
+    echo "bwa mem $KPgenome -t $nThreads $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam"
+    bwa mem -t $nThreads $KPgenome $file1 $file2 | samtools view -h > $(basename $file1 _R1.fastq).bam
   done
 
 cd $genomedir
@@ -79,8 +79,8 @@ bwa index $ECIgenome
 cd ${WD}/${fqDir}
   for file1 in `ls ECL-*_R1.fastq`; do
     file2=$(basename $file1 _R1.fastq)_R2.fastq
-    echo "bwa mem $KPgenome $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam"
-    bwa mem -t $nThreads $ECLgenome $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam
+    echo "bwa mem -t $nThreads $KPgenome $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam"
+    bwa mem -t $nThreads $ECLgenome $file1 $file2 | samtools view -h > $(basename $file1 _R1.fastq).bam
   done
 
 cd $genomedir
@@ -89,8 +89,8 @@ bwa index $ECgenome
 cd ${WD}/${fqDir}
   for file1 in `ls EC-*_R1.fastq`; do
     file2=$(basename $file1 _R1.fastq)_R2.fastq
-    echo "bwa mem $(basename KPgenome .fasta) $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam"
-    bwa mem -t $nThreads $ECgenome $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam
+    echo "bwa mem -t $nThreads $KPgenome $file1 $file2 | samtools view > $(basename $file1 _R1.fastq).bam"
+    bwa mem -t $nThreads $ECgenome $file1 $file2 | samtools view -h > $(basename $file1 _R1.fastq).bam
   done
 
   cd ${WD}

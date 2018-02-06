@@ -1,5 +1,13 @@
-#### Sources of P. pacificus genome files ####
+#### Sources of various bacterial genome and annotation files ####
 # To download these files, please type 'source 0README' from this directory
+
+  if [ ! -d "fasta" ] ; then
+    mkdir fasta
+  fi
+
+cd fasta
+
+echo "Downloading the genome assembly files"
 
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
 gzip -d GCF_000005845.2_ASM584v2_genomic.fna.gz
@@ -7,6 +15,28 @@ gzip -d GCF_000005845.2_ASM584v2_genomic.fna.gz
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/597/905/GCA_000597905.1_ASM59790v1/GCA_000597905.1_ASM59790v1_genomic.fna.gz
 gzip -d GCA_000597905.1_ASM59790v1_genomic.fna.gz
 
-wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/467/655/GCA_000467655.2_EC_38VIM1
-gzip -d GCA_000467655.2_EC_38VIM1
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/467/655/GCA_000467655.2_EC_38VIM1_genomic.fna.gz
+gzip -d GCA_000467655.2_EC_38VIM1_genomic.fna.gz
 
+cd ..
+
+if [ ! -d "annotation" ] ; then
+    mkdir annotation
+  fi
+
+cd annotation
+
+echo "Downloading the genome annotation files."
+
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.gff.gz
+gzip -d GCF_000005845.2_ASM584v2_genomic.gff.gz
+
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/597/905/GCA_000597905.1_ASM59790v1/GCA_000597905.1_ASM59790v1_genomic.gff.gz
+gzip -d GCA_000597905.1_ASM59790v1_genomic.gff.gz
+
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/467/655/GCA_000467655.2_EC_38VIM1/GCA_000467655.2_EC_38VIM1_genomic.gff.gz
+gzip -d GCA_000467655.2_EC_38VIM1_genomic.gff.gz
+
+cd ..
+
+echo "Download complete."
