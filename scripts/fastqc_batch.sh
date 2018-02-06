@@ -3,7 +3,7 @@
 #PBS -N WGS_genotyping_fastqc_batch_T502
 #PBS -k o
 #PBS -l nodes=1:ppn=16,vmem=32gb
-#PBS -l walltime=1:00:00
+#PBS -l walltime=4:00:00
 #PBS -m abe
 
 module load fastqc
