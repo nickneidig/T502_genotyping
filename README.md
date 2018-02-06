@@ -99,11 +99,11 @@ Log back into Carbonate periodically to check on the status of your job as follo
 qstat -u yourID
 ```
 
-If a job terminates prematuresly, please look at the error file (e.g. `PP_RNAseq_STAR_align_T502.e109469`) in your scripts directory, which will give you clues as to why the job halted.
+If a job terminates prematuresly, please look at the error file (e.g. `WGS_genotyping_align_T502.e11928`) in your scripts directory, which will give you clues as to why the job halted.
 
 ```
 ### your error file name will be slighly different- this is just an example.
-less .e109469 
+less WGS_genotyping_align_T502.e11928
 ```
 
 Once your job is complete, you should have 10 BAM files in the `alignments/` directory. You can look at them using a module called samtools.
@@ -111,7 +111,7 @@ Once your job is complete, you should have 10 BAM files in the `alignments/` dir
 ```
 cd alignments
 module load samtools
-samtools view NHR40-2.R1.bam | less
+samtools view KP-83_S11.bam | less
 ## that should open a window in your terminal that allows you to explore the alignments using your cursor.
 ## exit by typing the letter 'q' at any time.
 ```
