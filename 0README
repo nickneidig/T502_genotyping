@@ -1,17 +1,12 @@
 #### Sources of P. pacificus genome files ####
 # To download these files, please type 'source 0README' from this directory
 
-## The Hybrid2 genome assembly
-mkdir fasta
-cd fasta
-wget http://pristionchus.org/download/pacificus_Hybrid2.gz
-gzip -d pacificus_Hybrid2.gz
-ln -s pacificus_Hybrid2 pacificus_Hybrid2.fa
-cd ..
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
+gzip -d GCF_000005845.2_ASM584v2_genomic.fna.gz
 
-## Hybrid2 gene annotation files
-mkdir annotation
-cd annotation
-wget http://pristionchus.org/download/pacificus_Hybrid2_annotations.tgz
-tar xvf pacificus_Hybrid2_annotations.tgz
-cd ..
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/597/905/GCA_000597905.1_ASM59790v1/GCA_000597905.1_ASM59790v1_genomic.fna.gz
+gzip -d GCA_000597905.1_ASM59790v1_genomic.fna.gz
+
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/467/655/GCA_000467655.2_EC_38VIM1
+gzip -d GCA_000467655.2_EC_38VIM1
+
