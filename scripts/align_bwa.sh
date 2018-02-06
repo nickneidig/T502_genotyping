@@ -56,9 +56,9 @@ ln -s ${fileDir}/GSF1659-KP-85_S13_R2_001.fastq KP-85_S13_R2.fastq
 
 cd $WD
 
-echo "Retrieving the appropriate assembly files"
+#echo "Retrieving the appropriate assembly files"
 
-source 0README
+#source 0README
 
 echo "Performing alignment on the bacterial files"
 
