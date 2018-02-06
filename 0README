@@ -18,6 +18,10 @@ gzip -d GCA_000597905.1_ASM59790v1_genomic.fna.gz
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/467/655/GCA_000467655.2_EC_38VIM1_genomic.fna.gz
 gzip -d GCA_000467655.2_EC_38VIM1_genomic.fna.gz
 
+ln -s GCF_000005845.2_ASM584v2_genomic.fna E_coli_genome.fasta
+ln -s GCA_000597905.1_ASM59790v1_genomic.fna K_pneumoniae_genome.fasta
+ln -s GCA_000467655.2_EC_38VIM1_genomic.fna E_cloacae_genomic.fasta
+
 cd ..
 
 if [ ! -d "annotation" ] ; then
